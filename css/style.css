@@ -1,0 +1,156 @@
+.card {
+  cursor: pointer;
+  width: 400px;
+  background: white;
+  padding: 20px 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 150ms linear;
+  transition: all 50ms linear;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2), 0 0 20px 8px rgba(0, 0, 0, 0.1),
+    0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.content {
+  max-width: 90%;
+  text-align: center;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  z-index: 200;
+}
+
+.card::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: lightblue;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: move;
+}
+
+.card:hover::before {
+  background-color: #00eef5;
+}
+
+.new {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 999;
+  font-size: 50px;
+  padding: 10px;
+  background-color: #2479fd;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  line-height: 35px;
+  color: white;
+  cursor: pointer;
+}
+
+.new:hover {
+  background-color: #5170d7;
+}
+
+.new::selection {
+  background: transparent;
+}
+
+.modal,
+.content_modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.2s linear;
+}
+
+.content_modal {
+  max-width: 500px;
+  width: 100%;
+}
+
+.content_modal .title {
+  width: 90%;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 18px;
+}
+
+.content_modal .title:focus,
+.content_modal .text:focus {
+  outline: 1px solid #3e82fc;
+}
+
+.content_modal .text {
+  width: 90%;
+  outline: none;
+  border: none;
+  padding: 2px;
+  font-size: 18px;
+  resize: none;
+}
+
+.card .title,
+.card .text {
+  pointer-events: none !important;
+}
+
+.done,
+.cancel {
+  width: 90%;
+  cursor: pointer;
+  padding: 5px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  margin-top: 20px;
+  transition: background 100ms linear;
+}
+
+.done {
+  background-color: #3e82fc;
+}
+
+.cancel {
+  background-color: #f10c45;
+  margin-top: 10px;
+}
+
+.done:hover {
+  background-color: #4984b8;
+}
+
+.cancel:hover {
+  background-color: #f00c05;
+}

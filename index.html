@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo - drag and drop</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/options.css" />
+  </head>
+  <body>
+    <div class="modal">
+      <div class="content_modal">
+        <input type="text" class="title" placeholder="title" />
+        <textarea
+          cols="30"
+          rows="10"
+          placeholder="text"
+          class="text"
+        ></textarea>
+        <input type="button" value="done" class="done" onclick="done()" />
+        <input
+          type="button"
+          value="cancel"
+          class="cancel"
+          onclick="modal.close()"
+        />
+      </div>
+    </div>
+    <section class="options">
+      <span class="close">x</span>
+      <ul>
+        <li><a class="option del">delete</a></li>
+        <li><a class="option edt">edit</a></li>
+      </ul>
+    </section>
+    <!--
+    <div class="card" draggable="true" >
+      <h1 class="title">NewSletter</h1>
+      <p class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, hic?
+        Provident commodi dolor quod veniam cupiditate, praesentium impedit
+        labore magnam vero maiores ipsa quibusdam minus suscipit.
+      </p>
+    </div>
+    -->
+    <a class="new" onclick="newCard()">+</a>
+    <script src="./js/new.js"></script>
+    <script src="./js/drag.js"></script>
+    <script src="./js/functions.js"></script>
+  </body>
+</html>
