@@ -27,9 +27,19 @@ const done = () => {
     return;
   }
 
-  let divCard = modal.createCard(title, text);
-  let card = modal.renderCard(divCard);
-  card.addEventListener("contextmenu", cardFunction);
+  if (!editing[0]) {
+    let divCard = modal.createCard(title, text);
+    let card = modal.renderCard(divCard);
+    card.addEventListener("contextmenu", cardFunction);
+  } else {
+    let card = editing[1];
+    let titleCard = card.querySelector('.title');
+    let textCard = card.querySelector('.text');
+    
+    titleCard.textContent = title;
+    textCard.textContent = text;
+    editing = [false, undefined]
+  }
 
   modal.close();
 };

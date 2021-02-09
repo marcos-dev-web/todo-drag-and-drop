@@ -11,15 +11,16 @@
   <body>
     <div class="modal">
       <div class="content_modal">
-        <input type="text" class="title" placeholder="title" />
+        <input type="text" class="title" id="title_modal" placeholder="title" />
         <textarea
           cols="30"
           rows="10"
           placeholder="text"
           class="text"
+          id="text_modal"
         ></textarea>
         <input type="button" value="done" class="done" onclick="done()" />
-        <input
+        <input    
           type="button"
           value="cancel"
           class="cancel"
@@ -34,17 +35,18 @@
         <li><a class="option edt">edit</a></li>
       </ul>
     </section>
-    <!--
-    <div class="card" draggable="true" >
+    
+    <!-- <div class="card" draggable="true" >
       <h1 class="title">NewSletter</h1>
       <p class="content">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, hic?
         Provident commodi dolor quod veniam cupiditate, praesentium impedit
         labore magnam vero maiores ipsa quibusdam minus suscipit.
       </p>
-    </div>
-    -->
+    </div> -->
+    
     <a class="new" onclick="newCard()">+</a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="./js/new.js"></script>
     <script src="./js/drag.js"></script>
     <script src="./js/functions.js"></script>

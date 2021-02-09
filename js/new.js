@@ -1,4 +1,5 @@
 const divModal = document.querySelector(".modal");
+var editing = [false, undefined];
 
 const cardFunction = (event) => {
   let { x, y } = event;
@@ -57,8 +58,20 @@ const card = {
     cardElement.removeEventListener("contextmenu", cardFunction);
     options.close();
   },
-  edt(/*cardElement*/) {
-    alert("this function don't still has been implemented");
+  edt(cardElement) {
+    editing = [true, cardElement];
+    let title = cardElement.querySelector('.title')
+    let text = cardElement.querySelector('.text')
+
+    newCard(); //./functions.js
+
+    let inputTitleModal = divModal.querySelector('#title_modal');
+    let inputTextModal = divModal.querySelector('#text_modal');
+
+    inputTitleModal.value = title.innerText
+    inputTextModal.value = text.innerText
+
+
     options.close();
   },
 };
